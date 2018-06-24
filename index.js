@@ -1,4 +1,5 @@
 const fs = require('fs')
+const token = JSON.parse(fs.readFileSync(`.auth`)).token
 const Discord = require('discord.js')
 const client = new Discord.Client()
 const data = JSON.parse(fs.readFileSync(`data.json`))
@@ -60,4 +61,4 @@ const writeToFile = () => {
     fs.writeFile(`data.json`, JSON.stringify(data, null, 4), () => {})
 }
 
-client.login("NDU5NTgxMTM1MzM3NTUzOTIx.Dg4RzQ.YdgVKafAKsZxAYuzBDQN19DipwM")
+client.login(token)
